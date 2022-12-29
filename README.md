@@ -32,7 +32,8 @@ docker pull owasp/zap2docker-weekly
 docker-compose up
 
 # 192から始まるIP抽出(localhostでのアクセスができないため)
-ifconfig | grep "192"
+# mac版
+ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2
 
 # 攻撃
 docker run -t owasp/zap2docker-weekly zap-baseline.py -t http://192.168.xxx.xxx:8050/WebGoat
