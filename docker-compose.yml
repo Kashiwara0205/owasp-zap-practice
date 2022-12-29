@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  web:
+    image: webgoat/webgoat-8.0
+    ports:
+      - "8050:8080"
+    tty: true
